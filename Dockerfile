@@ -1,4 +1,4 @@
-# Build Stage
+# Build Stage dari tito
 FROM node:20-alpine AS build-stage
 WORKDIR /app
 COPY package*.json ./
@@ -10,6 +10,7 @@ RUN yarn build
 # Production Stage - Node.js Serve Static
 FROM node:20-alpine AS production-stage
 WORKDIR /app
+
 
 # Install 'serve' (static file server)
 RUN yarn global add serve

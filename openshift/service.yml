@@ -1,12 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-service
+  name: frontend-app2
 spec:
   selector:
-    app: frontend-app
+    app: frontend-app2
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3000
-  type: ClusterIP
+    - port: 80
+      targetPort: 8080

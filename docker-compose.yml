@@ -33,3 +33,43 @@ services:
 volumes:
   jenkins_home:
   sonarqube_data:
+
+# services:
+#   vue-app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8081:8080"
+#     environment:
+#       - NODE_ENV=development
+
+#   jenkins:
+#     image: jenkins/jenkins:lts
+#     user: root
+#     ports:
+#       - "8080:8080"
+#       - "50000:50000"
+#     volumes:
+#       - jenkins_home:/var/jenkins_home
+#       - /var/run/docker.sock:/var/run/docker.sock # Jika butuh build image dari Jenkins
+
+#   cloudflared:
+#     image: cloudflare/cloudflared:latest
+#     container_name: cloudflared-2
+#     command: tunnel --url http://jenkins:8080
+#     depends_on:
+#       - jenkins
+
+#   sonarqube:
+#     image: sonarqube:community
+#     ports:
+#       - "9000:9000"
+#     environment:
+#       - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+#     volumes:
+#       - sonarqube_data:/opt/sonarqube/data
+
+# volumes:
+#   jenkins_home:
+#   sonarqube_data:

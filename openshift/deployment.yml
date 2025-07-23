@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-app
+  name: frontend-app2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend-app
+      app: frontend-app2
   template:
     metadata:
       labels:
-        app: frontend-app
+        app: frontend-app2
     spec:
       containers:
-      - name: frontend-app
-        image: fathyafi/fe-non-ut:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 3000
+        - name: frontend-app2
+          image: fathyafi/fe-app2:latest  # Ganti sesuai nama image-mu
+          ports:
+            - containerPort: 8080
